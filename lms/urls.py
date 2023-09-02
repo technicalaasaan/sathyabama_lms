@@ -25,6 +25,6 @@ def home(request):
     # return HttpResponse('Test')
 
 urlpatterns = [
-    path('', home),
+    # path('', home),
     path('admin/', admin.site.urls),
 ]
