@@ -16,6 +16,7 @@ class Books(models.Model):
     class Meta:
          db_table = 'book'
 
+# create table book (int book_id AUTOINCREAMENT pk, book_name varchar(100)) values ();
 
 class Lease(models.Model):
     lease_id = models.AutoField(primary_key=True)

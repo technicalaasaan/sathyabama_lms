@@ -18,13 +18,16 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import path
+from books.views import GetBook, UpdateBook, home, create_view, CreateBook, get_books, update_books
 # from
 
-def home(request):
-    return render(request, 'home.html')
-    # return HttpResponse('Test')
-
 urlpatterns = [
-    # path('', home),
+    path('', home),
+    path('books/', create_view),
+    path('books/get/', get_books),
+    path('books/update/', update_books),
+    path('books/<pk>/update/', UpdateBook.as_view()),
+    path('books_cls/', CreateBook.as_view()),
+    path('books_cls/get/', GetBook.as_view()),
     path('admin/', admin.site.urls),
 ]

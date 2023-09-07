@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample</title>
+    <title>Document</title>
 </head>
 <body>
-    <marquee style="color: red;">
-       <h1>Welcome {{ name }} to Django Session</h1> 
-    </marquee>
-    <!-- {{ name }} -->
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
