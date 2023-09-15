@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.urls import path
+from django.urls import include, path
+from books.urls import lms_route
 from books.views import GetBook, UpdateBook, home, contact, create_view, CreateBook, get_books, update_books
 # from
 
@@ -31,4 +32,9 @@ urlpatterns = [
     path('books_cls/', CreateBook.as_view()),
     path('books_cls/get/', GetBook.as_view()),
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls'))
+]
+
+urlpatterns += [
+    path('api/', include(lms_route.urls)),
 ]

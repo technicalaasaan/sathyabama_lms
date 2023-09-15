@@ -15,6 +15,7 @@ class Books(models.Model):
 
     class Meta:
          db_table = 'book'
+         app_label = "books"
 
 # create table book (int book_id AUTOINCREAMENT pk, book_name varchar(100)) values ();
 
