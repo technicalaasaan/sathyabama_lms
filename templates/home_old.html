@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample</title>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+    </style>
+    <link href="css/navbar.css" />
+</head>
+<body>
+    <marquee style="color: red;">
+       <h1>Welcome {{ name }} to Django Session</h1> 
+    </marquee>        
+    <table style="width:100%">
+        <a href="{% url 'books' %}">Home</a>
+        {% include 'table.html' %}
+        {% for i in out %} <!-- tags -->
+        <tr>
+            <td>
+                {% if i.name %}
+                {{ i.name }}</td> 
+                {% endif %}
+            <td>{{ i.loc }}rs</td>
+            <td>{{ i.val }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <!-- {{ name }} -->
+</body>
+</html>

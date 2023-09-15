@@ -18,12 +18,13 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import path
-from books.views import GetBook, UpdateBook, home, create_view, CreateBook, get_books, update_books
+from books.views import GetBook, UpdateBook, home, contact, create_view, CreateBook, get_books, update_books
 # from
 
 urlpatterns = [
     path('', home),
-    path('books/', create_view),
+    path('contact/', contact),
+    path('books/', create_view, name='books'),
     path('books/get/', get_books),
     path('books/update/', update_books),
     path('books/<pk>/update/', UpdateBook.as_view()),

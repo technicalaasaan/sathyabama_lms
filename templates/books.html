@@ -8,7 +8,7 @@
 <body>
     <form enctype="multipart/form-data" method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ name.as_p }}
         <input type="submit" value="OK">
     </form>
 </body>

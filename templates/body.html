@@ -1,0 +1,6 @@
+{% extends 'home.html' %}
+{% block body %}
+{% for obj in out %}
+    <li> {{ obj.title}} &nbsp; {{ obj.author }} &nbsp; {{ obj.category }} </li>
+    {% endfor %}
+{% endblock %}

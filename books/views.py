@@ -5,21 +5,28 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.list import ListView
 from .models import Books
 
+data = [
+     {'name': 'suresh', 'loc': 'chennai', 'val': 600091},
+     {'name': 'sugumar', 'loc': 'bangalore', 'val': 560017},
+]
 # Create your views here.
+def contact(request):
+    return render(request, 'contact.html', {'out': data})
 def home(request):
-        return render(request, 'home.html', {'name': request.GET.get('name'), 'loc': 'chennai', 'val': 600091})
+    return render(request, 'home.html', {'out': data})
+    # return render(request, 'home.html', {'out': data})
     # return JsonResponse({ 'name':'Thank you!'})
 # def home(request):
 #     return render(request, 'home.html')
 #     # return HttpResponse('Test')
 
 def create_view(request):
-    data = {}
+    # data = {}
     form = BookForm(request.POST or None)
     if form.is_valid():
         form.save()
-    data['form'] = form
-    return render(request, 'books.html', data)
+    # data['form'] = form
+    return render(request, 'books.html', {'name': form})
         
 def get_books(request):
     data = {}
